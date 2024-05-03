@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #969494;
+}
+
+.card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+    background: #fff;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.card .imgBx{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transition: 1s;
+}
+
+.card:hover{
+    transform: translateX(50%);
+}
+
+.card:hover .imgBx{
+    transform: rotateY(-180deg);
+}
+
+.card .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.card .imgBx img:nth-child(2){
+    transform: rotateY(180deg);
+}
+
+.card .content{
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./assets/page.avif");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.card .content h3{
+    position: absolute;
+    top: 0;
+    padding-top: 30px;
+    color: #000000;
+    text-align: left;
+    font-size: 1em;
+    font-family: 700;
+}
+
+.card .content form {
+    padding-top: 30px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.card .content .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.card .content label {
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card .content input[type="text"],
+.card .content input[type="email"],
+.card .content textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #76b6ff;
+    border-radius: 5px;
+}
+
+.card .content button[type="submit"] {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.card .content button[type="submit"]:hover {
+    background-color: #313436;
+}
+
+
